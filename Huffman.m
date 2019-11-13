@@ -1,6 +1,14 @@
 function y=Huffman(vectorx)
-    vectorx=[0.3 0.2 0.45 0.05];
-    vectorx=sort(vectorx,'descend');
+    %vectorx=[0.7 0.2 0.05 0.05];
+    [m,n]=size(vectorx);
+    acum=0;
+    for i=1:n
+        acum=acum+vectorx(i);
+    end
+    if(acum>1 || acum<1)
+        fprintf('ENTRADA ERRONEA \n')
+    else
+        vectorx=sort(vectorx,'descend');
     [m,n]=size(vectorx);
     vectorxs=zeros(n,n-1);
     vectorxs(:,1)=vectorx; 
@@ -68,9 +76,5 @@ function y=Huffman(vectorx)
        fprintf('\n')
        I=0;
     end
-    
-    
-    
-    
-    
+    end
 end
